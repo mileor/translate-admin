@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/static/css/main.ed56fb0d.chunk.css",
-    "main.js": "/static/js/main.013bf19e.chunk.js",
-    "main.js.map": "/static/js/main.013bf19e.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.63eda8f3.js",
-    "runtime-main.js.map": "/static/js/runtime-main.63eda8f3.js.map",
-    "static/css/2.47e06e2e.chunk.css": "/static/css/2.47e06e2e.chunk.css",
-    "static/js/2.8faf4955.chunk.js": "/static/js/2.8faf4955.chunk.js",
-    "static/js/2.8faf4955.chunk.js.map": "/static/js/2.8faf4955.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.d53b2815fceb7d2c4a3b6fb49921b15b.js": "/precache-manifest.d53b2815fceb7d2c4a3b6fb49921b15b.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/2.47e06e2e.chunk.css.map": "/static/css/2.47e06e2e.chunk.css.map",
-    "static/css/main.ed56fb0d.chunk.css.map": "/static/css/main.ed56fb0d.chunk.css.map",
-    "static/js/2.8faf4955.chunk.js.LICENSE": "/static/js/2.8faf4955.chunk.js.LICENSE"
+    "main.css": "/translate-admin/static/css/main.ed56fb0d.chunk.css",
+    "main.js": "/translate-admin/static/js/main.d2354a82.chunk.js",
+    "main.js.map": "/translate-admin/static/js/main.d2354a82.chunk.js.map",
+    "runtime-main.js": "/translate-admin/static/js/runtime-main.568228d9.js",
+    "runtime-main.js.map": "/translate-admin/static/js/runtime-main.568228d9.js.map",
+    "static/css/2.47e06e2e.chunk.css": "/translate-admin/static/css/2.47e06e2e.chunk.css",
+    "static/js/2.8faf4955.chunk.js": "/translate-admin/static/js/2.8faf4955.chunk.js",
+    "static/js/2.8faf4955.chunk.js.map": "/translate-admin/static/js/2.8faf4955.chunk.js.map",
+    "index.html": "/translate-admin/index.html",
+    "precache-manifest.43b51394856c9bc2671636af2119ab77.js": "/translate-admin/precache-manifest.43b51394856c9bc2671636af2119ab77.js",
+    "service-worker.js": "/translate-admin/service-worker.js",
+    "static/css/2.47e06e2e.chunk.css.map": "/translate-admin/static/css/2.47e06e2e.chunk.css.map",
+    "static/css/main.ed56fb0d.chunk.css.map": "/translate-admin/static/css/main.ed56fb0d.chunk.css.map",
+    "static/js/2.8faf4955.chunk.js.LICENSE": "/translate-admin/static/js/2.8faf4955.chunk.js.LICENSE"
   },
   "entrypoints": [
-    "static/js/runtime-main.63eda8f3.js",
+    "static/js/runtime-main.568228d9.js",
     "static/css/2.47e06e2e.chunk.css",
     "static/js/2.8faf4955.chunk.js",
     "static/css/main.ed56fb0d.chunk.css",
-    "static/js/main.013bf19e.chunk.js"
+    "static/js/main.d2354a82.chunk.js"
   ]
 }
