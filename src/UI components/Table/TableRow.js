@@ -3,7 +3,11 @@ import { Link } from "react-router-dom"
 
 function TableRow(props) {
     return (
-        <tr>
+        <tr data-target-key={props.translateKey} style={
+                props.isDelete
+                ? {"backgroundColor": "rgba(220, 53, 69, .2)"}
+                : null
+            }>
             <td className="align-middle">{props.translateKey}</td>
             <td className="align-middle">{props.translateRu}</td>
             <td className="align-middle">{props.translateEng}</td>
@@ -19,7 +23,7 @@ function TableRow(props) {
                 <Link
                     to={`/edit-translation/${props.translateKey}`} 
                     type="button" 
-                    className="btn btn-link btn-sm d-block" 
+                    className="btn btn-link btn-sm d-block action-btn" 
                     style={{"textAlign": "left"}}
                     data-target-key={props.translateKey} 
                     onClick={props.onClickEdit}>
@@ -27,7 +31,7 @@ function TableRow(props) {
                 </Link>
                 <button 
                     type="button" 
-                    className="btn btn-link btn-sm d-block" 
+                    className="btn btn-link btn-sm d-block action-btn" 
                     data-target-key={props.translateKey} 
                     onClick={props.onClickDelete} 
                     >

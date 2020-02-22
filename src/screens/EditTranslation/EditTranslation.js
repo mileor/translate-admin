@@ -13,12 +13,14 @@ class EditTranslation extends React.Component {
         this.renderEditInputsData()
     }
 
-    componentDidUpdate() {
+    componentDidUpdate(prevProps) {
         this.tooltipContent()
+        if (this.props.roles !== prevProps.roles) {
+            this.props.fetchEditInputsData()
+        }
     }
 
     renderEditInputs = () => {
-        this.props.fetchEditInputsData()
         return this.props.inputsEditData.map((input, index) => {
             return (
                 <Input
@@ -42,8 +44,7 @@ class EditTranslation extends React.Component {
     }
 
     renderEditInputsData = () => {
-        const pathArray = window.location.pathname.split('/')
-        const inputKey = pathArray[2]
+        const inputKey = this.props.match.params.translateKey
         axios
         .get("https://translate-admin-add74.firebaseio.com/translateTableData.json")
         .then((response) => {
@@ -93,8 +94,7 @@ class EditTranslation extends React.Component {
         const inputRuValue = inputs[1].value
         const inputEngValue = inputs[2].value
         const inputKeyValue = inputs[0].value
-        const pathArray = window.location.pathname.split('/')
-        const inputKey = pathArray[2]
+        const inputKey = this.props.match.params.translateKey
 
         axios.get("https://translate-admin-add74.firebaseio.com/translateTableData.json")
              .then((response) => {
@@ -144,6 +144,8 @@ class EditTranslation extends React.Component {
         } else {
             currentRole = "редактор"
         }
+
+
         inputs.forEach(element => {
             if (element.hasAttribute("readonly") === true) {
                 element.setAttribute('data-original-title', `Данное поле заполняет ${currentRole}`)
@@ -167,7 +169,7 @@ class EditTranslation extends React.Component {
                         : null
                     }
                     <h3 className="mb-5">Редактирование слова</h3>
-                    <form className="w-50 needs-validation" noValidate>
+                    <form className="w-50 needs-validation form-block" noValidate>
                         { this.renderEditInputs() }
                         <button type="submit" className="btn btn-success" onClick={ this.checkSubmitHandler }> 
                             <i className="fas fa-save mr-1"></i> Сохранить изменения

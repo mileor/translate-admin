@@ -1,5 +1,6 @@
 import React from "react"
 import Navbar from "./Navbar"
+import Loader from "../Loader/Loader"
 import { connect } from "react-redux"
 import { changeRole, fetchNav } from "../../store/actions/auth"
 
@@ -16,7 +17,11 @@ class NavbarRender extends React.Component {
     render() {
         return (
             <Navbar
-                currentRole = {this.props.roles.moderator ? "модератор" : "редактор"}
+                currentRole = {
+                    this.props.loading
+                        ? <Loader isLoaderSmall={true}></Loader>
+                        : this.props.roles.moderator ? "модератор" : "редактор"
+                }
                 moderatorActive = {this.props.roles.moderator ? "active" : ""}
                 editorActive = {this.props.roles.editor ? "active" : ""}
                 changeRole = { this.changeRoleHandler }
@@ -30,6 +35,7 @@ class NavbarRender extends React.Component {
 function mapStateToProps(state) {
     return {
         roles: state.auth.rolesData,
+        loading: state.auth.loading
     }
 }
 

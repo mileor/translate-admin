@@ -19,7 +19,7 @@ class Authorization extends React.Component {
                     onClick={ this.choiceRoleHandler } 
                     data-role-choice="moderator" 
                     type="button" 
-                    className="btn btn-primary mt-5 d-block w-25 mx-auto">
+                    className="btn btn-primary mt-5 d-block w-25 mx-auto autn-btn">
                         <i className="fas fa-sign-in-alt mr-1"></i> Войти как модератор
                 </Link>
                 <Link 
@@ -27,7 +27,7 @@ class Authorization extends React.Component {
                     onClick={ this.choiceRoleHandler } 
                     data-role-choice="editor" 
                     type="button" 
-                    className="btn btn-primary mt-4 d-block w-25 mx-auto">
+                    className="btn btn-primary mt-4 d-block w-25 mx-auto autn-btn">
                         <i className="fas fa-sign-in-alt mr-1"></i> Войти как редактор
                 </Link>
             </div>

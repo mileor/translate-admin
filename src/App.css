@@ -1,3 +1,5 @@
+/* Styles for the table */
+
 .table {
     table-layout: fixed;
 }
@@ -8,6 +10,66 @@
     text-overflow: ellipsis;
 }
 
+.table tr {
+    transition: .05s ease-in;
+}
+
 .date-row {
     font-size: 14px;
+}
+
+/* Media queries */
+
+@media (max-width: 991px) {
+
+    .table {
+        table-layout: fixed;
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+}
+
+@media (max-width: 834px) {
+
+    .autn-btn {
+        width: 80% !important;
+    }
+
+    .form-block {
+        width: 100% !important;
+    }
+
+}
+
+@media (max-width: 736px) {
+
+    .add-btn {
+        float: none !important;
+        margin-right: auto;
+        margin-bottom: 24px;
+    }
+
+    .main-header {
+        float: none !important;
+    }
+
+}
+
+@media (max-width: 414px) {
+
+    .logo {
+        text-align: center;
+        width: 100%;
+        margin: 0;
+    }
+
+    .role-control {
+        margin: 0 auto;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+
 }

@@ -1,11 +1,14 @@
 import axios from "axios"
-import { FETCH_TABLE_SUCCESS, DELETE_TABLE_ITEM } from "./actionTypes"
+import { FETCH_TABLE_SUCCESS, DELETE_TABLE_ITEM, DELETE_TABLE_ITEM_START } from "./actionTypes"
 
 export function fetchTable() {
     return async dispatch => {
         axios.get("https://translate-admin-add74.firebaseio.com/translateTableData.json")
              .then((response) => {
                  const arr = Object.values(response.data)
+                 arr.forEach((item) => {
+                    item.isDelete = false
+                })
                  const arrKeys = Object.keys(response.data)
                  dispatch(fetchTableSuccess(arr, arrKeys))
              })
@@ -20,6 +23,7 @@ export function fetchTableSuccess(arr, arrKeys) {
         type: FETCH_TABLE_SUCCESS,
         translateTableData: arr,
         translateTableDataKeys: arrKeys,
+        loading: false
     }
 }
 
@@ -31,9 +35,11 @@ export function deleteFromTable(clickTarget, arr, arrKeys) {
         arr.forEach((item, index) => {
             if (item.key === targetData) {
                 deleteItemIndex = index
+                item.isDelete = true
             }
             return deleteItemIndex
         })
+        dispatch(deleteTableItemStart(arr))
 
         let deleteItemKey = arrKeys[deleteItemIndex]
 
@@ -53,6 +59,13 @@ export function deleteFromTable(clickTarget, arr, arrKeys) {
              .catch((error) => {
                  console.log(error)
              })
+    }
+}
+
+export function deleteTableItemStart(arr) {
+    return {
+        type: DELETE_TABLE_ITEM_START,
+        translateTableData: arr,
     }
 }
 

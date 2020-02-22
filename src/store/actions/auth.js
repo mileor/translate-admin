@@ -1,5 +1,5 @@
 import axios from "axios"
-import { CHANGE_ROLE_SUCCESS, CHOICE_ROLE_SUCCESS, FETCH_NAV_SUCCESS } from "./actionTypes"
+import { CHANGE_ROLE_SUCCESS, CHOICE_ROLE_SUCCESS, FETCH_NAV_SUCCESS, CHANGE_ROLE_START } from "./actionTypes"
 
 export function fetchNav() {
     return async dispatch => {
@@ -18,12 +18,14 @@ export function fetchNav() {
 export function fetchNavSuccess(rolesData) {
     return {
         type: FETCH_NAV_SUCCESS,
-        rolesData: rolesData
+        rolesData: rolesData,
+        loading: false
     }
 }
 
 export function changeRole(newRole) {
     return async dispatch => {
+        dispatch(changeRoleStart())
         const newRoleData = {
             moderator: false,
             editor: false
@@ -51,10 +53,18 @@ export function changeRole(newRole) {
     }
 } 
 
+export function changeRoleStart() {
+    return {
+        type: CHANGE_ROLE_START,
+        loading: true
+    }
+}
+
 export function changeRoleSuccess(newRolesData) {
     return {
         type: CHANGE_ROLE_SUCCESS,
-        rolesData: newRolesData
+        rolesData: newRolesData,
+        loading: false
     }
 }
 

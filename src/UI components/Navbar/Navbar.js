@@ -5,11 +5,11 @@ function Navbar(props) {
     return (
         <nav className="navbar navbar-light bg-light mb-5">
             <div className="container">
-                <Link to="/main-table" className="navbar-brand mb-0 h1 text-primary">Translate-admin</Link>
+                <Link to="/main-table" className="navbar-brand mb-0 h1 text-primary logo">Translate-admin</Link>
                 {
                     props.isHideRole
                     ?   null
-                    :   <div className="dropdown">
+                    :   <div className="dropdown role-control">
                             <button 
                                 className="btn btn-outline-primary btn-sm dropdown-toggle" 
                                 type="button" id="dropdownMenuButton" 

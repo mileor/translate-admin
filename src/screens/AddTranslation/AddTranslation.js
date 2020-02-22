@@ -81,7 +81,7 @@ class AddTranslation extends React.Component {
                             : null
                     }
                     <h3 className="mb-5">Добавление слова</h3>
-                    <form className="w-50 needs-validation" noValidate>
+                    <form className="w-50 needs-validation form-block" noValidate>
                         {this.renderInputs()}
                         <button className="btn btn-success" type="submit" onClick={this.checkSubmitHandler}>
                             <i className="fas fa-plus mr-1"></i> Добавить слово

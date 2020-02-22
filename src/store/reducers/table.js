@@ -1,8 +1,9 @@
-import { FETCH_TABLE_SUCCESS, DELETE_TABLE_ITEM } from "../actions/actionTypes"
+import { FETCH_TABLE_SUCCESS, DELETE_TABLE_ITEM, DELETE_TABLE_ITEM_START } from "../actions/actionTypes"
 
 const initialState = {
     translateTableData: [],
     translateTableDataKeys: [],
+    loading: true
 }
 
 export default function tableReducer(state = initialState, action) {
@@ -11,8 +12,13 @@ export default function tableReducer(state = initialState, action) {
             return {
                 ...state, 
                 translateTableData: action.translateTableData, 
-                translateTableDataKeys: action.translateTableDataKeys
+                translateTableDataKeys: action.translateTableDataKeys,
+                loading: action.loading
             } 
+        case DELETE_TABLE_ITEM_START:
+            return {
+                translateTableData: action.translateTableData,
+            }
         case DELETE_TABLE_ITEM:
             return {
                 ...state, 
